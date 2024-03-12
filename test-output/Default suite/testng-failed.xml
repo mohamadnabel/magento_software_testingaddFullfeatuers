@@ -5,8 +5,8 @@
     <classes>
       <class name="magntoSoftwareTest.magntoTestTask">
         <methods>
-          <include name="addOneRandomItem"/>
           <include name="mySetup"/>
+          <include name="signupProcess"/>
         </methods>
       </class> <!-- magntoSoftwareTest.magntoTestTask -->
     </classes>
