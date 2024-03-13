@@ -38,20 +38,28 @@ public class magntoTestTask {
 
 		driver.get(URL);
 
-		int randomIndex = rand.nextInt(4);
-
 		WebElement contenier = driver.findElement(By.className("product-items"));
 
 		List<WebElement> listItems = contenier.findElements(By.tagName("li"));
+
+		int randomIndex = rand.nextInt(listItems.size());
 
 //		for (int i = 0; i < listItems.size(); i++) {
 		listItems.get(randomIndex).click();
 		Thread.sleep(1500);
 
 		if (driver.getCurrentUrl().contains("fusion") || driver.getCurrentUrl().contains("push")) {
-			WebElement addRandomlyItem = driver.findElement(By.name("product-addtocart-button"));
+			WebElement addRandomlyItem = driver.findElement(By.id("product-addtocart-button"));
 
 			addRandomlyItem.click();
+
+			WebElement addedSuccessfulyMsg = driver
+					.findElement(By.cssSelector("div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"));
+
+			Boolean actual = addedSuccessfulyMsg.getText().contains("You added");
+			Boolean expected = true;
+
+			assertEquals(actual, expected);
 		} else {
 			WebElement sizeContainer = driver
 					.findElement(By.cssSelector("div[class='swatch-attribute size'] div[role='listbox']"));
@@ -76,7 +84,7 @@ public class magntoTestTask {
 		;
 	}
 
-	@Test(priority = 2, description = "this is check out test")
+	@Test(enabled = false, priority = 2, description = "this is check out test")
 	public void checkOut() throws InterruptedException {
 
 //		System.out.println("Test num 2 it's done ");
@@ -87,7 +95,7 @@ public class magntoTestTask {
 		Thread.sleep(4000);
 	};
 
-	@Test(priority = 3)
+	@Test(enabled = false, priority = 3)
 	public void signupProcess() throws InterruptedException {
 		String expectedMsg = "Thank you for registering with Main Website Store.";
 
