@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-13T02:31:34 AST" name="Default suite" finished-at="2024-03-13T02:31:57 AST" duration-ms="22756">
+  <suite started-at="2024-03-13T23:15:10 AST" name="Default suite" finished-at="2024-03-13T23:15:32 AST" duration-ms="21664">
     <groups>
     </groups>
-    <test started-at="2024-03-13T02:31:34 AST" name="Default test" finished-at="2024-03-13T02:31:57 AST" duration-ms="22756">
+    <test started-at="2024-03-13T23:15:10 AST" name="Default test" finished-at="2024-03-13T23:15:32 AST" duration-ms="21664">
       <class name="magntoSoftwareTest.magntoTestTask">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:magntoSoftwareTest.magntoTestTask@54c62d71]" started-at="2024-03-13T02:31:34 AST" name="mySetup" finished-at="2024-03-13T02:31:35 AST" duration-ms="157" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:magntoSoftwareTest.magntoTestTask@24d09c1]" started-at="2024-03-13T23:15:10 AST" name="mySetup" finished-at="2024-03-13T23:15:10 AST" duration-ms="180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="addOneRandomItem()[pri:1, instance:magntoSoftwareTest.magntoTestTask@54c62d71]" started-at="2024-03-13T02:31:35 AST" name="addOneRandomItem" finished-at="2024-03-13T02:31:44 AST" duration-ms="9338" status="PASS">
+        <test-method signature="addOneRandomItem()[pri:1, instance:magntoSoftwareTest.magntoTestTask@24d09c1]" started-at="2024-03-13T23:15:10 AST" name="addOneRandomItem" finished-at="2024-03-13T23:15:19 AST" duration-ms="8976" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addOneRandomItem -->
-        <test-method signature="checkOut()[pri:2, instance:magntoSoftwareTest.magntoTestTask@54c62d71]" started-at="2024-03-13T02:31:44 AST" name="checkOut" description="this is check out test" finished-at="2024-03-13T02:31:53 AST" duration-ms="9145" status="PASS">
+        <test-method signature="checkOut()[pri:2, instance:magntoSoftwareTest.magntoTestTask@24d09c1]" started-at="2024-03-13T23:15:19 AST" name="checkOut" description="this is check out test" finished-at="2024-03-13T23:15:28 AST" duration-ms="8351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkOut -->
-        <test-method signature="signupProcess()[pri:3, instance:magntoSoftwareTest.magntoTestTask@54c62d71]" started-at="2024-03-13T02:31:53 AST" name="signupProcess" finished-at="2024-03-13T02:31:57 AST" duration-ms="4068" status="PASS">
+        <test-method signature="signupProcess()[pri:3, instance:magntoSoftwareTest.magntoTestTask@24d09c1]" started-at="2024-03-13T23:15:28 AST" name="signupProcess" finished-at="2024-03-13T23:15:32 AST" duration-ms="4101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signupProcess -->

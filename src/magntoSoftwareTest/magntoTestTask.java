@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -101,13 +102,21 @@ public class magntoTestTask {
 		streetAddress.sendKeys("marka");
 		city.sendKeys("amman");
 		state.sendKeys("jordan");
+//		Select selectState = new Select(state);
+//		int selectIndexSize =
+//		Thread.sleep(2000);
+//		selectState.selectByIndex(2);
 		zipPostalCode.sendKeys("001548");
-		country.sendKeys("jordan");
+//		country.sendKeys("jordan");
+		Select selectCountry = new Select(country);
+//		selectCountry.selectByIndex(4);
+//		selectCountry.selectByValue("AF");
+		selectCountry.selectByVisibleText("Afghanistan");
 		phoneNumber.sendKeys("07914253688");
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.cssSelector("button.action.continue.primary")).click();
+//		driver.findElement(By.cssSelector("button.action.continue.primary")).click();
 
 	}
 }
