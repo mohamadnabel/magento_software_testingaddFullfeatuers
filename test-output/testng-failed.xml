@@ -6,7 +6,6 @@
       <class name="magntoSoftwareTest.magntoTestTask">
         <methods>
           <include name="mySetup"/>
-          <include name="checkOut"/>
           <include name="signupProcess"/>
         </methods>
       </class> <!-- magntoSoftwareTest.magntoTestTask -->

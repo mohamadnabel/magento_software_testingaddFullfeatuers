@@ -1,5 +1,7 @@
 package magntoSoftwareTest;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -11,9 +13,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import dev.failsafe.internal.util.Assert;
 import net.bytebuddy.build.Plugin.Factory.UsingReflection.Priority;
 
 public class magntoTestTask {
@@ -85,6 +89,7 @@ public class magntoTestTask {
 
 	@Test(priority = 3)
 	public void signupProcess() throws InterruptedException {
+		String expectedMsg = "Thank you for registering with Main Website Store.";
 
 		WebElement email = driver.findElement(By.id("customer-email"));
 		WebElement firstName = driver.findElement(By.name("firstname"));
@@ -96,7 +101,9 @@ public class magntoTestTask {
 		WebElement country = driver.findElement(By.name("country_id"));
 		WebElement phoneNumber = driver.findElement(By.name("telephone"));
 
-		email.sendKeys("mohammadnabeel@gmail.com");
+		String pass = "mohammadN@123";
+
+		email.sendKeys("mohammadnabeel4@gmail.com");
 		firstName.sendKeys("mohammad");
 		lastName.sendKeys("hussein");
 		streetAddress.sendKeys("marka");
@@ -116,7 +123,34 @@ public class magntoTestTask {
 
 		Thread.sleep(3000);
 
-//		driver.findElement(By.cssSelector("button.action.continue.primary")).click();
+		driver.findElement(By.cssSelector("button.action.continue.primary")).click();
+		Thread.sleep(4000);
 
+		WebElement placeOrder = driver.findElement(By.cssSelector(".action.primary.checkout"));
+		placeOrder.click();
+		Thread.sleep(4000);
+
+		WebElement continueToCreateAccount = driver.findElement(
+				By.xpath("//a[@href=\'https://magento.softwaretestingboard.com/checkout/account/delegateCreate/\']"));
+		continueToCreateAccount.click();
+		Thread.sleep(2000);
+
+		WebElement password = driver.findElement(By.id("password"));
+		WebElement confirmPass = driver.findElement(By.id("password-confirmation"));
+
+		password.sendKeys(pass);
+		confirmPass.sendKeys(pass);
+
+		WebElement submitCreatAccount = driver.findElement(By.cssSelector(".action.submit.primary"));
+		submitCreatAccount.click();
+
+		Thread.sleep(2000);
+
+		WebElement sucsesfulyAddAccountMsg = driver
+				.findElement(By.cssSelector("div[data-bind='html: $parent.prepareMessageForHtml(message.text)']"));
+
+		String actualMsg = sucsesfulyAddAccountMsg.getText();
+
+		assertEquals(actualMsg, expectedMsg);
 	}
 }
